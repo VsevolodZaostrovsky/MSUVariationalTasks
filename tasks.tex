@@ -1,0 +1,119 @@
+\documentclass[a4paper]{article}
+
+%Russian-specific packages
+%--------------------------------------
+\usepackage[T2A]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[english, russian]{babel}
+%for search in russian
+\usepackage{cmap}
+%--------------------------------------
+
+%Math-specific packages
+%--------------------------------------
+\usepackage{amsmath}
+\usepackage{amssymb}
+
+%Format-specific packages
+%--------------------------------------
+\usepackage[left=1cm,
+            right=1cm,
+            top=1cm,
+            bottom=1cm,
+            bindingoffset=0cm]{geometry}
+%--------------------------------------
+
+% for theorems, lemmas and definitions
+%--------------------------------------
+\usepackage{amsthm}
+
+\newtheorem{theorem}{Теорема}[section]
+
+\theoremstyle{definition}
+\newtheorem {definition}{Опр.}[section]
+\newtheorem {task}{Задача}[section]
+
+%--------------------------------------
+
+%Roman enum items
+\usepackage{enumerate}
+
+% For graphics
+%--------------------------------------
+\usepackage{tikz}
+\usetikzlibrary{
+  % for faster compilation
+  external
+  % for cool arrows
+  , arrows.meta
+  % for angles
+  , angles
+  , quotes
+  , babel
+}
+\tikzsetexternalprefix{tasks/}
+\tikzexternalize
+
+%--------------------------------------
+
+% My commands
+%--------------------------------------
+
+\DeclareMathOperator{\sgn}{sgn}
+
+\def\const{ \mathrm{const} }
+\def\eps{ \varepsilon }
+\def\Eps{ \mathcal{E} }
+
+\def\R{ \mathbb{R} }
+\def\Z{ \mathbb{Z} }
+\def\C{ \mathbb{C} }
+\def\E{ \mathrm{E} }
+\def\D{ \mathrm{D} }
+\def\P{ \mathrm{P} }
+
+\def\littleO{ \overline{\overline{o}} }
+\def\bigO{ \underline{\underline{\mathcal{O}}} }
+
+\newcommand*{\norm}[1]{\left\lVert#1\right\rVert}
+\newcommand*{\abs}[1]{\left\lvert#1\right\rvert}
+
+% suppress page count
+\pagestyle{empty}
+
+\includeonly{
+  tasks/task01/task,
+  tasks/task02/task,
+  tasks/task03/task,
+  tasks/task04/task,
+  tasks/task05/task,
+  tasks/task06/task,
+  tasks/task07/task,
+  tasks/task08/task,
+  tasks/task09/task,
+  tasks/task10/task,
+  tasks/task11/task,
+  tasks/task12/task,
+  tasks/task13/task,
+  tasks/task14/task,
+  tasks/task15/task,
+}
+
+\begin{document}
+
+\include{tasks/task01/task}
+\include{tasks/task02/task}
+\include{tasks/task03/task}
+\include{tasks/task04/task}
+\include{tasks/task05/task}
+\include{tasks/task06/task}
+\include{tasks/task07/task}
+\include{tasks/task08/task}
+\include{tasks/task10/task}
+\include{tasks/task11/task}
+\include{tasks/task12/task}
+\include{tasks/task13/task}
+\include{tasks/task14/task}
+\include{tasks/task15/task}
+
+\end{document}
