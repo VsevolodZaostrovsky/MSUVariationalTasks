@@ -11,4 +11,4 @@ dependencies:
     gnuplot
 
 clean:
-	rm -f *.log *.aux *.out *.toc *.gz *.pdf *.dvi *.fls *.fdb_latexmk
+	rm -f *.log *.aux *.out *.toc *.gz *.pdf *.dvi *.fls *.fdb_latexmk *.aux
