@@ -2,6 +2,10 @@
 tmp/
 .vscode/
 
+# aux ignore
+*/*.aux
+*.auxlock
+
 ## Core latex/pdflatex auxiliary files:
 *.aux
 *.lof
