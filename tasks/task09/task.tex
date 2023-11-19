@@ -1,0 +1,25 @@
+\begin{task}
+    Доказать, что в задаче
+    $$
+    \int_0^1\left(1-\dot{x}^2\right)^2 d t \rightarrow \text { inf, } \quad x(0)=0, \quad x(1)=0
+    $$
+    
+    точки локального минимума в пространстве $C^1[0,1]$ не существует, при этом точная нижняя грань функционала равна 0.
+    
+    \textbf{Решение.} Заметим, что $\int_0^1\left(1-\dot{x}^2\right)^2 d t \geqslant 0$. Если $\int_0^1\left(1-\dot{x}^2\right)^2 d t=0$, то $\dot{x}^2(t) \equiv 1$, откуда $\dot{x}(t)= \pm 1$ для любого $t$. Так как $\dot{x}$ непрерывна, то $\dot{x} \equiv 1$ или $\dot{x} \equiv-1$. Получаем противоречие с граничными условиями. Значит, нулевое значение не достигается.
+    
+    Теперь покажем, что для любого $\varepsilon>0$ существует допустимая функция $x \in C^1[0,1]$ такая, что $\int_0^1\left(1-\dot{x}^2\right)^2 d t \leqslant \varepsilon$. Положим
+    $$
+    z(t)=\left\{\begin{array}{l}
+    1, \quad 0 \leqslant t \leqslant \frac{1}{2}-\delta \\
+    \frac{1}{\delta}\left(\frac{1}{2}-t\right), \quad \frac{1}{2}-\delta \leqslant t \leqslant \frac{1}{2}+\delta, \\
+    -1, \quad \frac{1}{2}+\delta \leqslant t \leqslant 1
+    \end{array}\right.
+    $$
+    $x(t)=\int_0^t z(s) d s$. Тогда $x \in C^1[0,1], x(0)=x(1)=0$. При этом $|\dot{x}| \leqslant 1$. Значит,
+    $$
+    \int_0^1\left(1-\dot{x}^2\right)^2 d t=\int_{\frac{1}{2}-\delta}^{\frac{1}{2}+\delta}\left(1-\dot{x}^2\right)^2 d t \leqslant 2 \delta .
+    $$
+    
+    Значит, достаточно взять $\delta=\frac{\varepsilon}{2}$.
+\end{task}
