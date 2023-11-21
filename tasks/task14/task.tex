@@ -1,0 +1,35 @@
+\begin{task}
+Пусть $A: l_2 \rightarrow l_2$,
+$$
+A\left(x_1, x_2, \ldots, x_n, \ldots\right)=\left(x_1, x_2 / 2, \ldots, x_n / n, \ldots\right),
+$$
+$\left(y_1, \ldots, y_n, \ldots\right) \in l_2 \backslash \operatorname{Im} A$ (почему такая точка существует?). Рассмотрим задачу
+$$
+\sum_{n=1}^{\infty} y_n x_n \rightarrow \inf , \quad A\left(x_1, x_2, \ldots, x_n, \ldots\right)=0 .
+$$
+
+Какая точка будет точкой минимума в этой задаче? Показать, что для этой задачи принцип Лагранжа неверен. Какое из условий теоремы о необходимом условии локального минимума здесь не выполнено?
+\vspace{1cm}
+
+\textbf{Решение.} 
+
+1) В качестве точки $y$ можно взять последовательность 
+$(1,1 / 2, \ldots, 1 / n, \ldots) \in l_2$. Если $A x=y$, то $x_n=1$ для любого $n \in \mathbb{N}$, но $(1, \ldots, 1, \ldots) \notin l_2$.
+\vspace{0.5cm}
+
+2) Если $A\left(x_1, x_2, \ldots, x_n, \ldots\right)=0$, то $\frac{x_n}{n}=0$ для любого $n$. Значит, $x=0$-единственная допустимая точка, она же и будет точкой минимума.
+\vspace{0.5cm}
+
+3) Пусть $f_0(x)=\sum_{n=1}^{\infty} y_n x_n, F(x)=A(x)$. Тогда $f_0^{\prime}(x)[h]=\sum_{n=1}^{\infty} y_n h_n, F^{\prime}(x)[h]=A(h)=$ $\left(h_1, h_2 / 2, \ldots, h_n / n, \ldots\right)$. Если $z^*$ - линейный непрерывный функционал на $l_2$, то существует вектор $z=\left(z_1, \ldots, z_n, \ldots\right) \in l_2$ такой, что $z^*(x)=\sum_{n=1}^{\infty} z_n x_n$.
+
+Таким образом, если принцип Лагранжа выполнен, то существуют $\lambda_0 \in \mathbb{R}$ и $z \in l_2$, одновременно не равные нулю, такие, что для любого $h \in l_2$ выполнено
+$$
+\lambda_0 \sum_{n=1}^{\infty} y_n h_n+\sum_{n=1}^{\infty} z_n \frac{h_n}{n}=0 .
+$$
+
+Значит, $\lambda_0 y_n+\frac{z_n}{n}=0, n \in \mathbb{N}$. Если $\lambda_0 \neq 0$, то $y_n=-\frac{z_n}{\lambda_0 n}$, то есть $y=A\left(-z / \lambda_0\right)$. Но $y \notin \operatorname{Im} A$ - противоречие. Если $\lambda_0=0$, то $\frac{z_n}{n}=0$ для любого $n$, поэтому $z=0$. Получили, что оба множителя Лагранжа нулевые.
+\vspace{0.5cm}
+
+4) Пространства $X=Y=l_2$ банаховы, $f_0$ и $F$ непрерывно дифференцируемы (это линейные непрерывные отображения). Но $\operatorname{Im} F^{\prime}(0)=\operatorname{Im} A$ незамкнут (он всюду плотен в $l_2$, но не совпадает с $l_2$ ).
+
+\end{task}
