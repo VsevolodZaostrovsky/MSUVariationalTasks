@@ -1,0 +1,58 @@
+\begin{task}
+\textbf{Предварительный материал из лекции (Гармонический осциллятор):}\\
+Рассмотрим задачу:
+$$
+\mathcal{L}(x):=\int_{0}^{T_{0}}\left(\dot{x}^{2}-x^{2}\right) d t \rightarrow \mathrm{inf}, \quad x(0)=x\left(T_{0}\right)=0
+$$
+
+Тогда $L_{\dot{x}}=2 \dot{x}, L_{x}=-2 x$; уравнение Эйлера имеет вид $-\frac{d}{d t}(2 \dot{x})-2 x=0$, т.e. $\ddot{x}+x=0$.
+
+Заметим, что $\hat{x}=0$ является допустимой экстремалью. Выясним, является ли она точкой локального или глобального минимума. Для этого используем следующий прием.
+
+Пусть $\omega \in C^{1}\left[0, T_{0}\right]$. Тогда $$\int_{0}^{T_{0}} \left(\dot{\omega} x^{2}+2 \omega x \dot{x} \right)d t=\int_{0}^{T_{0}} \frac{d}{d t}\left(\omega x^{2}\right) d t=\left.\omega x^{2}\right|_{0} ^{T_{0}}=0\, \text{, если } x \in C_{0,0}^{1}\left[0, T_{0}\right].$$ \\
+Значит, можно добавить этот ноль к интегралу:
+$$
+\int_{0}^{T_{0}}\left(\dot{x}^{2}-x^{2}\right) d t=\int_{0}^{T_{0}}\left(\dot{x}^{2}-x^{2}-\dot{\omega} x^{2}-2 \omega x \dot{x}\right) d t
+$$
+
+Подберем $\omega$ так, чтобы $\dot{x}^{2}-x^{2}-\dot{\omega} x^{2}-2 \omega x \dot{x}$ было полным квадратом: $\dot{x}^{2}-x^{2}-\dot{\omega} x^{2}-2 \omega x \dot{x}=(\dot{x}-\omega x)^{2}$, т.е. $-1-\dot{\omega}=\omega^{2}$. (Тогда $\int_{0}^{T_{0}}\left(\dot{x}^{2}-x^{2}\right) d t=$ $\left.\int_{0}^{T_{0}}(\dot{x}-\omega x)^{2} d t \geq 0.\right)$ Получаем, что $\omega=\operatorname{ctg}\left(t-t_{*}\right)$.
+\\
+\textbf{Задача}\\
+
+1) Пусть $T_{0}>\pi,\ x(t)=c \sin \frac{\pi t}{T_{0}}$. Показать, что $\mathcal{L}(x)<0$ при $c \neq 0$. Почему проведенные выше рассуждения не проходят при $T_{0}>\pi$ и проходят при $T_{0}<\pi$ ?\\
+2) Показать, что $\int_{0}^{\pi}\left(\dot{x}^{2}-x^{2}\right) d t=\int_{0}^{\pi}(\dot{x}-x \cdot \operatorname{ctg} t)^{2} d t \geqslant 0$.
+
+\textbf{Решение.} 1) Вычисляем:
+$$
+\begin{gathered}
+\int_{0}^{T_{0}}\left(\dot{x}^{2}-x^{2}\right) d t=c^{2} \int_{0}^{T_{0}}\left(\frac{\pi^{2}}{T_{0}} \cos ^{2} \frac{\pi t}{T_{0}}-\sin ^{2} \frac{\pi t}{T_{0}}\right) d t= \\
+=\frac{c^{2}}{2}\left(\frac{\pi^{2}}{T_{0}^{2}} \int_{0}^{T_{0}}\left(1+\cos \frac{2 \pi t}{T_{0}}\right) d t-\int_{0}^{T_{0}}\left(1-\cos \frac{2 \pi t}{T_{0}}\right) d t\right)=\frac{c^{2} T_{0}}{2}\left(\frac{\pi^{2}}{T_{0}^{2}}-1\right)<0 .
+\end{gathered}
+$$
+
+Напомним, что мы подбирали гладкую функцию $\omega$ так, чтобы
+
+$$
+\int_{0}^{T_{0}}\left(\dot{x}^{2}-x^{2}\right) d t=\int_{0}^{T_{0}}(\dot{x}-\omega x)^{2} d t
+$$
+
+при этом $\omega$ была решением дифференциального уравнения $\dot{\omega}=-1-\omega^{2}$. Значит, $\omega(t)=$ $\operatorname{ctg}(t-a)$.
+
+Если $T_{0}<\pi$, то можно подобрать $a$ (в данном случае подойдет $a = 0$) так, чтобы $\operatorname{ctg}(t-a)$ была гладкой на $\left[0, T_{0}\right]$. Если $T_{0}>\pi$, то для любого $a$ функция $\omega$ будет иметь точку разрыва в интервале $\left(0, T_{0}\right)$, т.к. $ctg$ гладко определен на $(\pi n ,\ \pi n + \pi)$ и имеет разрывы в точках $\pi n$.
+
+2) Преобразуем правую часть условия:
+$$
+\begin{gathered}
+0 \leq\int_{0}^{\pi}(\dot{x}-x \cdot \operatorname{ctg} t)^{2} d t=\int_{0}^{\pi}\left(\dot{x}^{2}-2 x \dot{x} \operatorname{ctg} t+x^{2} \operatorname{ctg}^{2} t\right) d t= 
+\end{gathered}
+$$\\
+интегрируем среднее слагаемое по частям и используем $\dot{ctg}+ctg^{2}=-1$:
+$$
+\begin{gathered}
+=\int_{0}^{\pi}\left(\dot{x}^{2}+x^{2}(\operatorname{ctg} t)^{\prime}+x^{2} \operatorname{ctg}^{2} t\right) d t+\left.x^{2}(t) \operatorname{ctg} t\right|_{0} ^{\pi}=\int_{0}^{\pi}\left(\dot{x}^{2}-x^{2}\right) d t+\left.x^{2}(t) \operatorname{ctg} t\right|_{0} ^{\pi} .
+\end{gathered}
+$$
+
+Так как $x \in C^{1}[0, \pi]$ и $x(0)=0$, то $x(t)=O(t)$ в окрестности нуля; так как $\operatorname{ctg} t=O(1 / t)$ в окрестности нуля, то $x^{2}(t) \operatorname{ctg} t=O(t) \underset{t \rightarrow 0}{\rightarrow} 0$. Аналогично $x^{2}(t) \operatorname{ctg} t=O(\pi-t) \underset{t \rightarrow \pi}{\rightarrow} 0$. Значит, $\left.x^{2}(t) \operatorname{ctg} t\right|_{0} ^{\pi}=0$ и равенство доказано.
+
+\end{task}
