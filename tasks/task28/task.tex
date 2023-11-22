@@ -14,23 +14,48 @@
 
     \textbf{Peшение.} 
     \begin{definition}
-        Говорят, что выполнено усиленное условие Лежандра, 
-        если $\widehat L_{\dot{x}\dot{x}} > 0 \; \forall t \in [t_0, t_1]$.
+        Скажем, что выполнено усиленное условие Лежандра, 
+        если $\widehat L_{\dot{x}\dot{x}} > 0 \; \forall t \in [-T_0, T_0]$.
     \end{definition}
 
-    \begin{definition} Говорят, что выполнено условие Якоби, 
+    \begin{definition} Скажем, что выполнено условие Якоби, 
         если справедливо усиленное условие Лежандра, а решение уравнения Якоби
-        \begin{equation*}
+        \begin{equation} \label{eqJacobi28} 
             -\frac{d}{d t}\left(\widehat{L}_{\dot{x} \dot{x}}(t) \dot{h}
                 +\widehat{L}_{\dot{x} x}(t) h\right)
                 +\left(\widehat{L}_{\dot{x} x}(t) \dot{h}
                 +\widehat{f}_{x x}(t) h\right)=0 \quad 
                 \Leftrightarrow \quad \frac{d}{d t}\left(\widehat{L}_{\dot{x} \dot{x}}(t) \dot{h}\right)
                 =\left(\widehat{L}_{x x}(t)-\frac{d}{d t} \widehat{L}_{\dot{x} x}(t)\right) h
-        \end{equation*}
+        \end{equation}
         не обращается в ноль на интервале $\left(t_0, t_1\right)$ при начальных условиях: 
-        $h\left(t_0\right)=0, \quad \dot{h}\left(t_0\right)=1$.
-\end{definition}
+        $h\left(t_0\right)=0, \quad \dot{h}\left(t_0\right)=1$. 
+    \end{definition}
+    \begin{definition}
+        Скажем, что выполнено усиленное условие Якоби, если справедливо усиленное условие 
+        Лежандра, а решение уравнения \eqref{eqJacobi28} не обращается в ноль на полусегменте
+        $(-T_0, T_0]$ при начальных условиях: ${h(-T_0)=0, \; \dot{h}(-T_0)=1}$.
+    \end{definition}
+
+    \begin{definition}
+        Скажем, что выполнено усиленное условие Вейерштрасса, 
+        если функиия $\dot{x} \mapsto L(t, x(t), \dot{x})$ 
+        выпукла в '$C$'-окрестности экстремали $\widehat{x}$ 
+        при любом $t \in\left[-T_0, T_0\right]$, т.е. для любого 
+        $t \in\left[-T_0, T_0\right]$ u $x(t) \in 
+        \mathcal{O}(\widehat{x}, \varepsilon) \;
+        (\text {с некоторым } {\varepsilon>0})$ функиия
+        $\dot{x} \mapsto L(t, x(t), \dot{x})$ выпукла.
+    \end{definition}
+
+    \begin{theorem}
+        Если выполнены усиленное 
+        условие Якоби и усиленное условие Вейерштрасса, то экстремаль доставляет
+        сильный максимум.
+    \end{theorem}
+
+
+
 
 1. Уравнение Якоби в данном случае имеет вид:
 \begin{equation*}
