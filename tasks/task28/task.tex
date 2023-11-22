@@ -1,0 +1,76 @@
+\begin{task}
+    Рассмотрим задачу
+    \begin{equation*}
+        \int_{-T_0}^{T_0} x \sqrt{\dot{x}^2+1} d t \rightarrow \min , 
+        x\left(T_0\right) = x \left( -T_0 \right) = \xi.
+    \end{equation*}
+    \begin{enumerate}
+        \item Выписать уравнение Якоби, подобрать одно из его решений, 
+        затем найти общее решение. 
+        \item Пусть допустимых экстремалей две. Доказать, что одна из них 
+        является точкой сильного минимума, а вторая не является точкой слабого минимума.
+    \end{enumerate}
+
+
+    \textbf{Peшение.} 
+    \begin{definition}
+        Говорят, что выполнено усиленное условие Лежандра, 
+        если $\widehat L_{\dot{x}\dot{x}} > 0 \; \forall t \in [t_0, t_1]$.
+    \end{definition}
+
+    \begin{definition} Говорят, что выполнено условие Якоби, 
+        если справедливо усиленное условие Лежандра, а решение уравнения Якоби
+        \begin{equation*}
+            -\frac{d}{d t}\left(\widehat{L}_{\dot{x} \dot{x}}(t) \dot{h}
+                +\widehat{L}_{\dot{x} x}(t) h\right)
+                +\left(\widehat{L}_{\dot{x} x}(t) \dot{h}
+                +\widehat{f}_{x x}(t) h\right)=0 \quad 
+                \Leftrightarrow \quad \frac{d}{d t}\left(\widehat{L}_{\dot{x} \dot{x}}(t) \dot{h}\right)
+                =\left(\widehat{L}_{x x}(t)-\frac{d}{d t} \widehat{L}_{\dot{x} x}(t)\right) h
+        \end{equation*}
+        не обращается в ноль на интервале $\left(t_0, t_1\right)$ при начальных условиях: 
+        $h\left(t_0\right)=0, \quad \dot{h}\left(t_0\right)=1$.
+\end{definition}
+
+1. Уравнение Якоби в данном случае имеет вид:
+\begin{equation*}
+    \ddot{h}-\frac{2}{C} \th (\frac{t}{C}) \dot{h}+\frac{1}{C^2} h = 0    
+\end{equation*}
+Оно имеет два линейно независимых решения: 
+$h_1(t)=\operatorname{sh} \frac{t}{C}$ и $h_2(t)=\operatorname{ch} \frac{t}{C}-\frac{t}{C} \operatorname{sh} \frac{t}{C}$. 
+Общее решение, подчиненное условию $h(-1)=0$, таково:
+
+\begin{equation*}
+h(t)=\left(\operatorname{ch} \frac{t}{C}-\frac{t}{C} \operatorname{sh} \frac{t}{C}\right) \operatorname{sh} \frac{1}{C}+\left(\operatorname{ch} \frac{1}{C}-\frac{1}{C} \operatorname{sh} \frac{1}{C}\right) \operatorname{sh} \frac{t}{C} .
+\end{equation*}
+
+2. Было показано (см. \ref{task6}), что экстремали существуют, 
+если и только если $\xi \geq \xi_{*}=\operatorname{sh} \frac{1}{C_0}$, 
+где $C_0=\operatorname{th} \frac{1}{C_0} \approx 1.5088 \ldots$ При этом, экстремаль задается формулой 
+$x(t)=C \operatorname{ch} \frac{t}{C}$, а параметр $C>0$ есть корень уравнения $\varphi(C) = \xi$, 
+где $\varphi(C) \stackrel{\text { def }}{=} C \operatorname{ch} \frac{1}{C}$. 
+
+Функция $C \mapsto \varphi(C)$ выпукла, т.к. $\varphi^{\prime \prime}(C)=C^{-3} \operatorname{ch} \frac{1}{C}$. 
+Ее минимум достигается в точке $C_0$, где $\varphi^{\prime}\left(C_0\right)=0$. Отметим, что
+$$
+\varphi^{\prime}(C)=\left[\operatorname{ch} \frac{1}{C}-\frac{1}{C} \operatorname{sh} \frac{1}{C}\right]
+$$
+
+Если $\xi > \xi_{*}$, то существуют ровно два значения $C_1 \in\left(0, C_0\right)$ и $C_2>C_0$, 
+которые удовлетворяют условию $\varphi(C)=R$. Покажем, что экстремаль $\widehat{x}_2=C_2 \operatorname{ch} \frac{1}{C_2}$ 
+доставляет сильный (локальный) минимум, а экстремаль $\widehat{x}_1=C_1 \operatorname{ch} \frac{1}{C_1}$ 
+не является ни слабым минимумом, ни слабым максимумом. Прежде всего, отметим, что для обеих экстремалей выполнено 
+усиленное условие Лежандра, а именно: $\widehat{f}_{\dot{x} \dot{x}}(t)=C \mathrm{ch}^{-2} \frac{t}{C} > 0$ 
+и потому ни одна из них не является локальным максимумом. \par
+
+
+Так как $h(0)=\operatorname{sh} \frac{1}{C} \neq 0$, то нули функции $h$ совпадают с нулями функции
+$$
+z: t \mapsto z(t)=\frac{h(t)}{\operatorname{sh} \frac{1}{C} \operatorname{sh} \frac{t}{C}}=\left(\operatorname{cth} \frac{t}{C}-\frac{t}{C}\right)+\left(\operatorname{cth} \frac{1}{C}-\frac{1}{C}\right)
+$$
+
+Заметим, что $z^{\prime}(t)<0$, а $z(1) = \frac{2 \varphi^{\prime}(C)}{\operatorname{sh} \frac{1}{C}}$. 
+Поэтому, если $z(1)<0 \Leftrightarrow C=C_1$, то условие Якоби не выполнено, а если $z(1) > 0 \Leftrightarrow C=C_2$, 
+то выполнено усиленное условие Якоби.
+
+\end{task}
