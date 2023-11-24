@@ -1,0 +1,10 @@
+\begin{task}
+    Задача. (с лекций). 1) Если $F: X \rightarrow \mathbb{R}$, то существует $x \in\left[x_0, x_1\right]$ такое, что $F\left(x_1\right)-$ $\left.F\left(x_0\right)=F^{\prime}(x)\left[x_1-x_0\right] .2\right)$ Если $F: X \rightarrow Y, \operatorname{dim} Y>1$, то утверждение из п. 1 может быть неверным.
+    
+    Решение. 1) Положим $\varphi(t)=F\left((1-t) x_0+t x_1\right)$. Тогда $\varphi^{\prime}(t)=F^{\prime}\left((1-t) x_0+t x_1\right)\left[x_1-x_0\right]$. По теореме Лагранжа, существует $\tau \in(0,1)$ такое, что $\varphi(1)-\varphi(0)=\varphi^{\prime}(\tau)$. Значит,
+    $$
+    F\left(x_1\right)-F\left(x_0\right)=\varphi(1)-\varphi(0)=\varphi^{\prime}(\tau)=F^{\prime}\left((1-\tau) x_0+\tau x_1\right)\left[x_1-x_0\right] .
+    $$
+    2) Пусть $F: \mathbb{R} \rightarrow \mathbb{R}^2, F(t)=(\cos t, \sin t)$. Тогда $F(2 \pi)-F(0)=(0,0), F^{\prime}(t)=$ $(-\sin t, \cos t)$; значит, если $F(2 \pi)-F(0)=2 \pi F^{\prime}(t)$ для некоторого $t$, то $(0,0)=2 \pi(-\sin t, \cos t)$ - противоречие.
+    
+\end{task}
