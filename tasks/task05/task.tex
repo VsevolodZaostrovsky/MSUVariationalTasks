@@ -1,0 +1,53 @@
+\begin{task}
+    Найти допустимые экстремали в задаче
+    $$
+    \int_{t_0}^{t_1}\frac{\sqrt{1+\dot{x}^2}}{\sqrt{x}} dt \rightarrow \max ,\quad x(t_0)=x_0,\quad x(t_1)=x_1,\quad x>0
+    $$
+    
+    \textbf{Решение.}
+    $L$ явно не зависит от $t$. Если $\hat{x}$ - экстремаль, $\hat{x}\in C^2$, то
+    $$
+    \dot{x}L_{\dot{x}}-L = const
+    $$
+    
+    Так как $L\in C^2$, достаточно доказать, что $L_{\dot{x}\dot{x}}\neq 0$
+    
+    $L_{\dot{x}\dot{x}}=\frac{1}{\sqrt{x}(1+\dot{x}^2)^{3/2}}$
+    
+    $\hat{x}\in C^2, L\in C^2 $ удовлетворяют $\dot{x}L_{\dot{x}} = const$ 
+    
+    $\hat{x}$ не равна константе ни на каком интервале $\Longrightarrow\hat{x}$ удовлетворяет уравнению Эйлера
+    
+    $\hat{x}=c$ на интервале
+    
+    $-\frac{d}{dt}\frac{\dot{x}}{\sqrt{x}\sqrt{1+\dot{x}^2}}+\frac{1}{2}x^{-3/2}\sqrt{1+\dot{x}^2}=0$
+    
+    Первое слагаемое ноль, второе - ненулевая константа. Противоречие.
+    
+    $$
+    \dot{x}L_{\dot{x}}-L = const
+    $$
+    $$
+    \dot{x}\frac{\dot{x}}{\sqrt{x}\sqrt{1+\dot{x}^2}} - \frac{\sqrt{1+\dot{x}^2}}{\sqrt{x}}=const
+    $$
+    $$
+    x(1+\dot{x}^2)=const
+    $$
+    $$
+    \dot{x}^2=\frac{c}{x}-1
+    $$
+    $$
+    \dot{x}=\pm\sqrt{\frac{c}{x}-1}
+    $$
+    $$
+    x = c\sin^2{\frac{\tau}{2}}=\frac{c}{2}(1-\cos{\tau})
+    $$
+    $$
+    t+a= \pm\int\frac{dx}{\sqrt{\frac{c}{x}-1}} = \pm\int\frac{2c\sin{\frac{\tau}{2}}\cos{\frac{\tau}{2}}d\tau}{\sqrt{\frac{1}{\sin^2{\frac{\tau}{2}}}-1}} = \pm c\int\sin{\frac{\tau}{2}}\cos{\frac{\tau}{2}}\abs{\tan{\frac{\tau}{2}}}d\tau
+    $$
+    $$
+    c\int\sin^2{\frac{\tau}{2}}d\tau = \frac{c}{2}\int(1-\cos{\tau})d\tau = \frac{c}{2}(\tau-\sin{\tau})
+    $$
+    
+\end{task}
+
