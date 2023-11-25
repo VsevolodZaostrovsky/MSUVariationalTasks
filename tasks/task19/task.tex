@@ -1,0 +1,30 @@
+\begin{task}
+    Показать, что если $L$ явно не зависит от $x$ (т.е. $L=L(t, \dot{x}(t)))$, то условие Вейерштрасса будет достаточным условием глобального минимума.
+
+    \textbf{Решение.} В силу уравнения Эйлера, $L_{\dot{x}}(t, \dot{\hat{x}}(t)) \equiv c$.
+    
+    Пусть $x$ - произвольная допустимая функция. В силу условия Вейерштрасса
+    
+    $$
+    \int_{t_{0}}^{t_{1}} \mathcal{E}(t, \hat{x}(t), \dot{\hat{x}}(t), \dot{x}(t)) d t \geq 0
+    $$
+    
+    откуда
+    
+    $$
+    \int_{t_{0}}^{t_{1}}\left(L(t, \dot{x}(t))-L(t, \dot{\hat{x}}(t))-L_{\dot{x}}(t, \dot{\hat{x}}(t))(\dot{x}(t)-\dot{\hat{x}}(t))\right) d t \geq 0
+    $$
+    
+    Значит,
+    
+    $$
+    \int_{t_{0}}^{t_{1}} L(t, \dot{x}(t)) d t \geq \int_{t_{0}}^{t_{1}} L(t, \dot{\hat{x}}(t)) d t+\int_{t_{0}}^{t_{1}} c(\dot{x}(t)-\dot{\hat{x}}(t)) d t=
+    $$
+    
+    $$
+    =\int_{t_{0}}^{t_{1}} L(t, \dot{\hat{x}}(t)) d t+\left.c x\right|_{t_{0}} ^{t_{1}}-\left.c \hat{x}\right|_{t_{0}} ^{t_{1}}=\int_{t_{0}}^{t_{1}} L(t, \dot{\hat{x}}(t)) d t
+    $$
+    
+    так как $x\left(t_{0}\right)=\hat{x}\left(t_{0}\right)$ и $x\left(t_{1}\right)=\hat{x}\left(t_{1}\right)$.
+    
+\end{task}
