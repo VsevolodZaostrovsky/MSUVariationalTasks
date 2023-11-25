@@ -1,0 +1,56 @@
+Пусть $l>0$. Доказать, что допустимые экстремали в задаче
+
+$$
+\int_{0}^{1}(y \dot{x}-x \dot{y}) d t \rightarrow \max , \quad \int_{0}^{1} \sqrt{\dot{x}^{2}+\dot{y}^{2}} d t=l, \quad x(0)=x(1)=y(0)=y(1)=0, \quad \dot{x}^{2}+\dot{y}^{2}>0
+$$
+
+являются параметризацией окружности.
+
+\textbf{Решение.} Функция Лагранжа имеет вид
+
+$$
+\int_{0}^{1}\left(\lambda_{0}(-y \dot{x}+x \dot{y})+\lambda_{1} \sqrt{\dot{x}^{2}+\dot{y}^{2}}\right) d t
+$$
+
+Значит, уравнения Эйлера имеют вид
+
+$$
+\begin{aligned}
+& -\frac{d}{d t}\left(\lambda_{1} \frac{\dot{x}}{\sqrt{\dot{x}^{2}+\dot{y}^{2}}}-\lambda_{0} y\right)+\lambda_{0} \dot{y}=0, \\
+& -\frac{d}{d t}\left(\lambda_{1} \frac{\dot{y}}{\sqrt{\dot{x}^{2}+\dot{y}^{2}}}+\lambda_{0} x\right)-\lambda_{0} \dot{x}=0 .
+\end{aligned}
+$$
+
+Если $\lambda_{1}=0$, то $\lambda_{0} \dot{y}=0, \lambda_{0} \dot{x}=0$. Так как $\lambda_{0} \neq 0$, то $\dot{y}=0, \dot{x}=0$, что противоречит условию $\dot{x}^{2}+\dot{y}^{2}>0$.
+
+\begin{task}
+Пусть $\lambda_{1} \neq 0$. Можно считать, что $\lambda_{1}=2$. Тогда
+
+$$
+-\frac{d}{d t} \frac{\dot{x}}{\sqrt{\dot{x}^{2}+\dot{y}^{2}}}+\lambda_{0} \dot{y}=0
+$$
+
+Пусть $\lambda_{1} \neq 0$. Можно считать, что $\lambda_{1}=2$. Тогда
+
+$$
+-\frac{d}{d t} \frac{\dot{x}}{\sqrt{\dot{x}^{2}+\dot{y}^{2}}}+\lambda_{0} \dot{y}=0
+$$
+
+$$
+-\frac{d}{d t} \frac{\dot{y}}{\sqrt{\dot{x}^{2}+\dot{y}^{2}}}-\lambda_{0} \dot{x}=0
+$$
+
+откуда
+
+$$
+\frac{\dot{x}}{\sqrt{\dot{x}^{2}+\dot{y}^{2}}}=\lambda_{0} y+a, \quad \frac{\dot{y}}{\sqrt{\dot{x}^{2}+\dot{y}^{2}}}=-\lambda_{0} x+b
+$$
+
+Возведем обе части равенств в квадрат и получим
+
+$$
+1=\left(-\lambda_{0} y+a\right)^{2}+\left(\lambda_{0} x+b\right)^{2}
+$$
+
+Заметим, что $\lambda_{0} \neq 0$, иначе $\frac{d y}{d x}=$ const или $\frac{d x}{d y}=$ const, при этом $(\dot{x}, \dot{y})$ нигде не обращается в $(0,0)$. Тогда будет движение по отрезку всё время в одном направлении, что противоречит граничным условиям. А если $\lambda_{0} \neq 0$, то (3) - уравнение окружности.
+\end{task}
