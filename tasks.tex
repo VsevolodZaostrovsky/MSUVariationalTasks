@@ -13,6 +13,7 @@
 %--------------------------------------
 \usepackage{amsmath}
 \usepackage{amssymb}
+\usepackage{hyperref}
 
 %Format-specific packages
 %--------------------------------------
@@ -78,6 +79,9 @@
 \newcommand*{\norm}[1]{\left\lVert#1\right\rVert}
 \newcommand*{\abs}[1]{\left\lvert#1\right\rvert}
 
+\date{Осенний семестр 2023}
+\title{Курс <<Вариационное исчисление и оптимальное управление>>}
+
 % suppress page count
 \pagestyle{empty}
 
@@ -113,6 +117,20 @@
 }
 
 \begin{document}
+
+\begin{titlepage}
+  \maketitle
+  
+  \begin{abstract}
+    В документе собраны решения задач к экзамену по вариационному исчислению и оптимальному управлению
+    осеннего семестра 2023 года. Лектор: Васильева А. А. 
+    Задачи подготовлены дилетантами и могут содержать ошибки и опечатки. Исходники, материалы
+    и информацию по участию в дополнении теха можно найти
+    \href{https://github.com/VsevolodZaostrovsky/MSUVariationalTasks}{тут}.
+  \end{abstract}
+  
+\end{titlepage}
+
 
 \include{tasks/task01/task}
 \include{tasks/task02/task}
