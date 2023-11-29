@@ -1,0 +1,37 @@
+\begin{task}
+    $$F(x)=\int_{0}^{3 / 2}\left(\dot{x}^{3}+2 x\right) d t \rightarrow \inf , x(0)=0, x(3 / 2)=1$$. 
+    
+    Доказать, что выполнено (неусиленное) условие Лежандра, усиленное условие Якоби, а допустимая экстремаль не дает слабый минимум.
+    
+    Примечание. Усиленное условие Якоби предполагает 2й порядок этого линейного уравнения. В моем файле TU усиленное условие Якоби трактовалось при выполнении усиленного условия Лежандра, которое обеспечивает 2й порядок уравнения Якоби.\\
+    \textbf{Решение.} \\
+    Уравнение экстремалей $f_{x}=\frac{d}{d t} f_{\dot{x}}$ для $f=\dot{x}^{3}+2 x$ имеет вид $2=6 \dot{x} \ddot{x}$, т.е. $3 y \dot{y}=1$ для $y=\dot{x}$. Имеем $3 y d y=d t$, т.е. $\frac{3}{2} y^{2}=t+C$. При $C=0$ имеем $\dot{x}(t)=\left(\frac{2}{3} t\right)^{1 / 2}$, что при условии $x(0)=0$ дает
+    
+    $$
+    \hat{x}(t)=\left(\frac{2}{3}\right)^{1 / 2} t^{3 / 2} \cdot \frac{2}{3}=\left(\frac{2}{3} t\right)^{3 / 2} \Longrightarrow \hat{x}\left(\frac{3}{2}\right)=1
+    $$
+    
+    т.е. допустимую экстремаль $\hat{x}$. Имеем
+    
+    $$
+    \begin{aligned}
+    & F(\hat{x}+h)-F(\hat{x})=\int_{0}^{3 / 2}\left\{\left([\dot{\hat{x}}+\dot{h}]^{3}+2[\hat{x}+h]\right)-\left([\dot{\hat{x}}]^{3}+2[\hat{x}]\right)\right\} d t= \\
+    & \int_{0}^{3 / 2}\left\{3(\dot{\hat{x}})^{2} \dot{h}+3 \dot{\hat{x}}(\dot{h})^{2}+(\dot{h})^{3}+2 h\right\} d t=\int_{0}^{3 / 2}\left\{3 \dot{\hat{x}}(\dot{h})^{2}+(\dot{h})^{3}\right\} d t
+    \end{aligned}
+    $$
+    
+    Последнее равенство верно, т.к. на экстремали $\hat{x}$ линейная по $h$ часть разности $F(\hat{x}+h)-F(\hat{x})$ равна нулю. Таким образом,
+    
+    $$
+    F(\hat{x}+h)-F(\hat{x})=\int_{0}^{3 / 2}\left\{3 \dot{\hat{x}}(\dot{h})^{2}+(\dot{h})^{3}\right\} d t=\int_{0}^{3 / 2}\left\{3\left(\frac{2 t}{3}\right)^{1 / 2}(\dot{h})^{2}+(\dot{h})^{3}\right\} d t
+    $$
+    
+    Заметим, что усиленное условие Лежандра $\hat{f}_{\dot{x} \dot{x}}(t)>0$ при $t \in[0,3 / 2]$ нарушается при $t=0$. Учитывая это есть резон быстро уйти от нуля, взяв функцию $h$ кусочно-линейной, такую, что $h(0)=h(3 / 2)=0$, а $\dot{h}=-\varepsilon<0$ при $0<t<\delta \ll 1$ и $\dot{h}=a>0$ при $0<t<\delta$. Тогда $h(t)=a(t-3 / 2)$ при $t>\delta$ и $a \approx \frac{2}{3} \delta$. Отсюда получаем
+    
+    $$
+    \begin{gathered}
+    F(\hat{x}+h)-F(\hat{x}) \approx \int_{0}^{\delta} \sqrt{6} t^{1 / 2} \varepsilon^{2} d t-\varepsilon^{3} \delta+\int_{0}^{3 / 2} \sqrt{6} t^{1 / 2} a^{2} d t+\frac{3}{2} a^{3}= \\
+    \varepsilon^{3} \delta\left\{\frac{2}{3} \sqrt{6} \frac{\delta^{1 / 2}}{\varepsilon}+\left(\frac{3}{2}\right)^{3 / 2}(2 / 3)^{2} \frac{\delta}{\varepsilon}+\frac{3}{2}(2 / 3)^{3} \delta^{2}\right\}-\varepsilon^{3} \delta<0 \quad \text { при } \quad \frac{\delta^{1 / 2}}{\varepsilon} \ll 1 .
+    \end{gathered}
+    $$
+\end{task}
