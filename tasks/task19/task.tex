@@ -1,0 +1,60 @@
+\begin{task}
+(распределение с максимальной энтропией; см. тему про достаточное условие глобального минимума в задаче с равенствами и неравенствами). 
+Пусть $\rho:[0,+\infty) \rightarrow(0,+\infty), \int_{0}^{\infty} \rho(x) d x=1$ (функция $\rho$ имеет смысл плотности распределения). Энтропией называется величина $S=-\int_{0}^{\infty} \rho(x) \ln \rho(x) d x$. Найти функцию $\rho$, для которой энтропия максимальна при заданном среднем (т.е. задано ограничение $\int_{0}^{\infty} x \rho(x) d x=C_{1}$ ).
+
+\textbf{Решение.} Напишем задачу на экстремум:
+
+$$
+\int_{0}^{\infty} \rho(x) \ln \rho(x) d x \rightarrow \inf , \quad \int_{0}^{\infty} \rho(x) d x=1, \quad \int_{0}^{\infty} x \rho(x) d x=C_{1}
+$$
+
+Составим функцию Лагранжа с $\lambda_{0}=1$ :
+
+$$
+\begin{gathered}
+	\mathcal{L}=\int_{0}^{\infty} \rho(x) \ln \rho(x) d x+\lambda_{1} \int_{0}^{\infty} \rho(x) d x+\lambda_{2} \int_{0}^{\infty} x \rho(x) d x= \\
+	=\int_{0}^{\infty}\left(\rho(x) \ln \rho(x)+\lambda_{1} \rho(x)+\lambda_{2} x \rho(x)\right) d x .
+\end{gathered}
+$$
+
+Найдем минимум у функции $\mathcal{L}$. Для этого при каждом фиксированном $x \in[0, \infty)$ найдем точку минимума у $f(v)=v \ln v+\lambda_{1} v+\lambda_{2} x v$. Вычислим производную: $f^{\prime}(v)=\ln v+1+\lambda_{1}+\lambda_{2} x$. Эта функция строго возрастает по $v ; f^{\prime}(v)=0$ в точке $\hat{\rho}(x)=e^{-1-\lambda_{1}-\lambda_{2} x}$. Значит, $\hat{\rho}(x)=e^{-1-\lambda_{1}-\lambda_{2} x}$ является точкой минимума $v \ln v+\lambda_{1} v+\lambda_{2} x v$.
+
+Из условий $\int_{0}^{\infty} e^{-1-\lambda_{1}-\lambda_{2} x} d x=1$ и $\int_{0}^{\infty} x e^{-1-\lambda_{1}-\lambda_{2} x} d x=C_{1}$ находим $\lambda_{1}$ и $\lambda_{2}$ :
+
+$$
+e^{\lambda_{1}+1}=\frac{1}{\lambda_{2}}, \quad C_{1} e^{\lambda_{1}+1}=\frac{1}{\lambda_{2}^{2}}
+$$
+
+Докажем, что найденная функция будет точкой минимума в задаче. В самом деле, пусть $\rho(x)$ - допустимая функция. Тогда для любого $x \in$ $[0, \infty)$ получаем
+
+$$
+\rho(x) \ln \rho(x)+\lambda_{1} \rho(x)+\lambda_{2} x \rho(x) \geq \hat{\rho}(x) \ln \hat{\rho}(x)+\lambda_{1} \hat{\rho}(x)+\lambda_{2} x \hat{\rho}(x) .
+$$
+
+Интегрируем это неравенство и получаем $\mathcal{L}(\rho) \geq \mathcal{L}(\hat{\rho})$, т.е.
+
+$$
+\begin{aligned}
+	& \int_{0}^{\infty} \rho(x) \ln \rho(x) d x+\lambda_{1} \int_{0}^{\infty} \rho(x) d x+\lambda_{2} \int_{0}^{\infty} x \rho(x) d x \geq \\
+	& \geq \int_{0}^{\infty} \hat{\rho}(x) \ln \hat{\rho}(x) d x+\lambda_{1} \int_{0}^{\infty} \hat{\rho}(x) d x+\lambda_{2} \int_{0}^{\infty} x \hat{\rho}(x) d x .
+\end{aligned}
+$$
+
+Воспользуемся ограничениями в задаче и получим, что $\int_{0}^{\infty} \rho(x) \ln \rho(x) d x \geq$ $\int_{0}^{\infty} \hat{\rho}(x) \ln \hat{\rho}(x) d x$.
+
+Теперь докажем, что других точек минимума в задаче нет. Пусть $\rho_{1}$ и $\rho_{2}$ - две разные точки минимума. Обозначим минимальное значение через $m$; тогда $\int_{0}^{\infty} \rho_{1}(x) \ln \rho_{1}(x) d x=\int_{0}^{\infty} \rho_{2}(x) \ln \rho_{2}(x) d x=m$. Функции $\rho_{1}$ и $\rho_{2}$ различаются на множестве положительной меры. Заметим, что функция $\rho=\left(\rho_{1}+\rho_{2}\right) / 2$ также является допустимой. Покажем, что $\int_{0}^{\infty} \rho(x) \ln \rho(x) d x<m$.
+
+В самом деле, функция $\varphi(v)=v \ln v$ строго выпукла, т.е. для любых $u \neq w, \lambda \in(0,1)$ выполнено $\varphi((1-\lambda) u+\lambda w)<(1-\lambda) \varphi(u)+\lambda \varphi(w)$. Это верно, так как $\varphi^{\prime \prime}(v)>0$ для любого $v>0$.
+
+Значит, на множестве положительной меры
+
+$$
+\frac{\rho_{1}(x)+\rho_{2}(x)}{2} \ln \left(\frac{\rho_{1}(x)+\rho_{2}(x)}{2}\right)<\frac{1}{2} \rho_{1}(x) \ln \rho_{1}(x)+\frac{1}{2} \rho_{2}(x) \ln \rho_{2}(x),
+$$
+
+поэтому
+
+$$
+\int_{0}^{\infty} \rho(x) \ln \rho(x) d x<\frac{1}{2} \int_{0}^{\infty} \rho_{1}(x) \ln \rho_{1}(x) d x+\frac{1}{2} \int_{0}^{\infty} \rho_{2}(x) \ln \rho_{2}(x) d x=m .
+$$
+\end{task}
