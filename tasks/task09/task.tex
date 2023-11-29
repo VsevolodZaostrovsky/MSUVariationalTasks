@@ -10,19 +10,19 @@
     \end{cases}
     \end{equation*}
     Где $M=\{ (x_1,x_2)|x_2=x_1,x_1>0\}$, уже знаем что G дифференцируемо по Гато в т. $(0,0)$ (но не по Фреше). Покажем, что $F$ дифференцируемо по Фреше в т. 0.
-    $$\underset{\lambda \rightarrow 0}{lim}=\frac{F(\lambda h)-F (0)}{\lambda} 
-        = \underset{\lambda\rightarrow0}{lim}=\frac{(\lambda h,\lambda^2 h^2)-(0,0)}{\lambda}=(h,0)=F'(0)[h]$$
+    $$\underset{\lambda \rightarrow 0}{\lim} \frac{F(\lambda h)-F (0)}{\lambda} 
+        = \underset{\lambda\rightarrow0}{\lim} \frac{(\lambda h,\lambda^2 h^2)-(0,0)}{\lambda}=(h,0)=F'(0)[h]$$
     
     $$ F(\lambda h)=(\lambda h,\lambda^2 h^2)=(0,0)+(h,0)+((\lambda-1)h,\lambda^2 h^2) $$
-    Последнее слогаемое это $\bar{o}(\|h \|)$.
+    Последнее слагаемое это $\bar{o}(\|h \|)$.
     
-    \noindent $\Rightarrow F$ дифференцируемо по Фреше в 0.$G \circ F:\mathbb{R}\rightarrow\mathbb{R}$:
+    \noindent $\Rightarrow F$ дифференцируемо по Фреше в 0. $G \circ F: \mathbb{R} \rightarrow \mathbb{R}$:
      \begin{equation*}
     x\rightarrow
     \begin{cases}
         1, x\neq0\\0, x=0
     \end{cases}
     \end{equation*}
-    $$\underset{\lambda\rightarrow0}{lim}=\frac{G \circ F(\lambda h)-G \circ F(0)}{\lambda}=\underset{\lambda\rightarrow0}{lim} \left( \frac{1}{\lambda} \right) $$
+    $$\underset{\lambda\rightarrow0}{\lim}=\frac{G \circ F(\lambda h)-G \circ F(0)}{\lambda}=\underset{\lambda\rightarrow0}{\lim} \left( \frac{1}{\lambda} \right) $$
     $\Rightarrow$ нет вариации по Лагранжу.
     \end{task}
