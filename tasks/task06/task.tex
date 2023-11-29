@@ -4,15 +4,15 @@
     В зависимости от $\xi > 0$ установить, сколько может быть допустимых экстремалей. \\
     \textbf{Решение.} \\
     \[L_{\dot{x}} = \frac{x\dot{x}}{\sqrt{1 + \dot{x}^2}}\]
-    \[L_{\dot{x}\dot{x}} = {\frac{x}{(1 + \dot{x}^{2})}^ {3/2}} > 0,\]
+    \[L_{\dot{x}\dot{x}} = {(\frac{x}{(1 + \dot{x}^{2})})^ {3/2}} > 0,\]
     Решение уравнения Эйлера $\hat{x} \in C^2[-T_{0}, T_{0}]$ и $\hat{x}(t)\dot{L_{x}}(\hat{x}(t),
         \dot{\hat{x}}(t)) - L(\hat{x}(t),
         \dot{\hat{x}}(t)) = const$.\\
     Проверим, что допустимая экстремаль не может обращаться в константу ни на каком невырожденном отрезке. Это видно из уравнения Эйлера:
-    \[-\frac{d}{dt} \frac{x\dot{x}}{\sqrt{1 + \dot{x}^2}} + \sqrt{1 + \dot{x}} = 0\]
+    \[-\frac{d}{dt} \frac{x\dot{x}}{\sqrt{1 + \dot{x}^2}} + \sqrt{1 + \dot{x}^2} = 0\]
     Решений нет. \\
     Из уравнения $\dot{x}L_{\dot{x}} - L = const$ получаем: \\
-    \[ \dot{x} \frac{x\dot{x}}{\sqrt{1 + \dot{x}^2}} - x\sqrt{1 + \dot{x}} = const\]
+    \[ \dot{x} \frac{x\dot{x}}{\sqrt{1 + \dot{x}^2}} - x\sqrt{1 + \dot{x}^2} = const\]
     \[\frac{x}{\sqrt{1 + \dot{x}^2}} = const = C \Rightarrow 1 + \dot{x}^2 = \frac{x^2}{C^2} \Rightarrow \dot{x} = \pm \sqrt{\frac{x^2}{C^2} - 1} \Rightarrow dt = \pm \frac{dx}{\sqrt{\frac{x^2}{C^2} - 1}}\]
     \[t + a = \pm \int_{}^{}\frac{1}{\sqrt{\frac{x^2}{C^2} - 1}} \,dx = \left| x = Cch(\tau) \right| = \pm \int_{}^{}\frac{C sh(\tau)}{|sh(\tau)|} \,d\tau \]
     \[t + a = \pm C\tau \Rightarrow \frac{t+a}{C} = \pm \tau \Rightarrow ch\left(\frac{t+a}{C}\right) = ch(\tau) = \frac{x}{C} \Rightarrow x = Cch\left(\frac{t+a}{C}\right)\]
