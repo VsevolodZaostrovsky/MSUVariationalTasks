@@ -1,0 +1,32 @@
+\begin{task}
+Пусть $T: L^2(0,1) \rightarrow L^2(0,1), T x(t)=\sin x(t)$. Показать, что $T$ дифференцируемо по Гато в каждой гочке, но нигде не дифференцируемо по Фреше.
+\\
+\textbf{Решение.} \\
+
+\textbf{1. Дифференцируемость по Гато.} \\
+Сначала зафиксируем вектор $h \in L^2(0,1)$. Нусть $\lambda \in \mathbb{R}$. Для любого $t$
+$$
+\lim _{\lambda \rightarrow 0} \frac{\sin [x(t)+\lambda h(t)]-\sin x(t)}{\lambda} \stackrel{(\sin x)^{\prime}=\cos x}{=} \cos x(t) \cdot h(t) .
+$$
+
+Таким же будет предел в $L^2(0,1)$, т.е.
+$$
+\lim _{\lambda \rightarrow 0} \int_0^1\left(\frac{\sin [x(t)+\lambda h(t)]-\sin x(t)}{\lambda}-\cos x h(t)\right)^2 d t=0,
+$$
+
+поскольку поточечная сходимость есть, а подинтегральная функция мажорируется функцией из $L^1$,
+$$
+\left|\frac{\sin [x(t)+\lambda h(t)]-\sin x(t)}{\lambda}\right| \leq|h(t)|.
+$$
+
+\textbf{2. Однако нет дифференцируемости по Фреше.} \\
+Следуя указанию А.А. Васильевой, рассмотрим два cлучая.
+\\
+А) Если $\mu\{t:|\cos x(t)| \neq 0\}>0$, то существует $\varepsilon>0$ и $E=\{t:|\cos x(t)| \geq \varepsilon\}>0$. 
+Пусть $E_n \subset E$, что $\mu E_n \rightarrow 0$ при $n \rightarrow \infty$. Возьмем $h_n=2 \pi \cdot 1_{E_n}$. Тогда $\sin \left(x(t)+h_n(t)\right)-\sin x(t) \equiv 0$. Поэтому
+$$
+\frac{\left\|\cos x(\cdot) h_n(\cdot)\right\|_{L^2}}{\left\|h_{\mathrm{n}}(\cdot)\right\|_{L^2}} \geq \frac{\varepsilon\left(\mu E_n\right)^{1 / 2}}{\left(\mu E_n\right)^{1 / 2}}=\varepsilon .
+$$
+В). Если $\mu\{t:|\cos x(t)| \neq 0\}>0$, то возьмем $h_n=\pi \cdot 2 \cdot 1_{E_n}$. Далее аналогично. Получается, что $T$ не дифференцируемо и по Фреше.
+
+\end{task}
