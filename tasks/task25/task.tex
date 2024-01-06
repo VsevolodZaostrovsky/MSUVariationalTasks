@@ -1,0 +1,48 @@
+\begin{task}
+
+$F(x)=\int_0^1\left(\dot{x}^2-x \dot{x}^3\right) d t \rightarrow extr , x(0)=x(1)=0$. Показать, что для экстремали $\hat x = 0$ выполнено усиленное условие Лежандра, 
+усиленное условие Якоби, условие Вейерштрасса (не усиленное), и $\hat x$ не является точкой сильного минимума. 
+
+\textbf{Решение.} \\   
+Имеем $\hat{L}_{\dot{x} \dot{x}}(t)=2, \hat{L}_{\dot{x} x}(t)=0, \hat{L}_{x x}(t)=0$. Значит, выполнено усиленное условие Лежандра. Уравнение Якоби имеет вид $\ddot{h}=0$. Если $h$ - нетривиальное решение и $h(0)=0$, то $h(t)=a t$, где $a \neq 0$. Эта функция зануляется только при $t=0$. Значит, выполнено усиленное условие Якоби.
+
+Далее, $\mathcal{E}(t, \hat{x}(t), \dot{\hat{x}}(t), v)=v^{2} \geq 0$. Значит, выполнено условие Вейерштрасса.
+
+Теперь покажем, что $\hat{x}$ не является точкой сильного минимума. Пусть $R>0,0<\delta<\frac{1}{2}$. Положим
+
+$$
+\dot{h}(t)=\left\{\begin{array}{l}
+R, \quad 0 \leq t<\delta \\
+-\frac{R \delta}{1-\delta}, \quad \delta<t \leq 1
+\end{array}\right.
+$$
+
+$h(t)=\int_{0}^{t} \dot{h}(s) d s$. Тогда
+
+$$
+h(t)=\left\{\begin{array}{l}
+R t, \quad 0 \leq t \leq \delta \\
+\frac{R \delta}{1-\delta}(1-t), \quad \delta \leq t \leq 1
+\end{array}\right.
+$$
+
+Получаем
+
+$$
+\begin{aligned}
+& \int_{0}^{1}\left(\dot{h}^{2}-h \dot{h}^{3}\right) d t=\int_{0}^{\delta}\left(R^{2}-R^{4} t\right) d t+ \\
+& +\int_{\delta}^{1}\left(\frac{R^{2} \delta^{2}}{(1-\delta)^{2}}-\frac{R^{4} \delta^{4}}{(1-\delta)^{4}}(1-t)\right) d t \leq \\
+& \leq R^{2} \delta-\frac{R^{4} \delta^{2}}{2}+C_{1} R^{2} \delta^{2}+C_{2} R^{4} \delta^{4},
+\end{aligned}
+$$
+
+где $C_{1}, C_{2}$ - положительные константы. Сделав замену $R \delta=\varepsilon$, получим
+
+$$
+\int_{0}^{1}\left(\dot{h}^{2}-h \dot{h}^{3}\right) d t \leq R \varepsilon-\frac{R^{2} \varepsilon^{2}}{2}+C_{1} \varepsilon^{2}+C_{2} \varepsilon^{4}
+$$
+
+Если $R=\frac{1}{\varepsilon^{2}}$, то при малых $\varepsilon$ получим отрицательное число. При этом $\|h\|_{C}=\varepsilon$; это число можно выбрать сколь угодно малым, так что сильного минимума нет.
+
+
+\end{task}
