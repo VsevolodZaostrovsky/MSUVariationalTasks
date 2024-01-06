@@ -3,7 +3,26 @@
     вариационного исчисления 
     (условие Вейерштрасса и непрерывность $\left.L_{\dot{x}}(t, \hat{x}(t), \dot{\hat{x}}(t))\right)$ из принципа максимума Понтрягина.
 
-    \textbf{Решение.} Задача записывается в виде
+    \textbf{Решение.} 
+    
+    \begin{definition}
+        Функция Вейерштрасса определяется по формуле: 
+        \begin{equation*}
+             \mathcal{E}(t, x, u, v) = L(t, x, v) - L(t, x, u) - L_{\dot x}(t, x, u) (v - u). 
+        \end{equation*}
+    \end{definition}
+
+    \begin{definition}
+        Пусть $\widehat x \in PC^{1}([t_0, t_1], \mathbb{R}^n)$ --- допустимая экстремаль (т.е. решение уравнения Эйлера--Лагранжа). Скажем, 
+        что выполнено условие Вейерштрасса для 
+        $\widehat x$, 
+        если $ \mathcal{E} (t, \widehat x(t), \dot{\widehat{x}} (t), v) \geq 0$ 
+        для любого 
+        $t \in [t_0, t_1], v \in \mathbb{R}^n $.
+    \end{definition}
+
+    
+    Задача записывается в виде
     
     $$
     \int_{t_{0}}^{t_{1}} L(t, x(t), u(t)) d t \rightarrow \inf , \quad x\left(t_{0}\right)=x_{0}, \quad x\left(t_{1}\right)=x_{1}, \quad \dot{x}=u .
@@ -17,7 +36,7 @@
     
     Условие неотрицательности: $\lambda_{0} \geq 0$.
     
-    У равнение Эйлера: $-\dot{p}(t)+\lambda_{0} L_{x}(t, \hat{x}(t), \hat{u}(t))=0$.
+    Уравнение Эйлера: $-\dot{p}(t)+\lambda_{0} L_{x}(t, \hat{x}(t), \hat{u}(t))=0$.
     
     Условие трансверсальности: $p\left(t_{0}\right)=\lambda_{1}, p\left(t_{1}\right)=-\lambda_{2}$.
     
