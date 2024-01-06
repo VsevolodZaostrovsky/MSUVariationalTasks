@@ -1,16 +1,57 @@
 \begin{task}
-    Рассмотрим задачу $\int_0^\pi\left(\dot{x}^2-x^2-x^4\right) d t \rightarrow$ inf, $x(0)=x(\pi)=$ 0. 
-    Показать, что для $\hat{x}=0$ выполнено yсиленное условие Лежандра, условие Якоби, 
+    \begin{definition}
+        Скажем, что выполнено усиленное условие Лежандра,
+        если $\widehat L_{\dot{x}\dot{x}} > 0 \; \forall t \in [-T_0, T_0]$.
+    \end{definition}
+
+    \begin{definition} Скажем, что выполнено условие Якоби,
+        если справедливо усиленное условие Лежандра, а решение уравнения Якоби
+        \begin{equation} \label{eqJacobi28}
+            -\frac{d}{d t}\left(\widehat{L}_{\dot{x} \dot{x}}(t) \dot{h}
+            +\widehat{L}_{\dot{x} x}(t) h\right)
+            +\left(\widehat{L}_{\dot{x} x}(t) \dot{h}
+            +\widehat{L}_{x x}(t) h\right)=0 \quad
+            \Leftrightarrow \quad \frac{d}{d t}\left(\widehat{L}_{\dot{x} \dot{x}}(t) \dot{h}\right)
+            =\left(\widehat{L}_{x x}(t)-\frac{d}{d t} \widehat{L}_{\dot{x} x}(t)\right) h
+        \end{equation}
+        не обращается в ноль на интервале $\left(-T_0, T_0\right)$ при начальных условиях:
+        $h\left(-T_0\right)=0, \quad \dot{h}\left(-T_0\right)=1$.
+    \end{definition}
+    \begin{definition}
+        Скажем, что выполнено усиленное условие Якоби, если справедливо усиленное условие
+        Лежандра, а решение уравнения \eqref{eqJacobi28} не обращается в ноль на полусегменте
+        $(-T_0, T_0]$ при начальных условиях: ${h(-T_0)=0, \; \dot{h}(-T_0)=1}$.
+    \end{definition}
+
+    \begin{definition}
+        Скажем, что выполнено усиленное условие Вейерштрасса,
+        если функиия $\dot{x} \mapsto L(t, x(t), \dot{x})$
+        выпукла в '$C$'-окрестности экстремали $\widehat{x}$
+        при любом $t \in\left[-T_0, T_0\right]$, т.е. для любого
+        $t \in\left[-T_0, T_0\right]$ u $x(t) \in
+            \mathcal{O}(\widehat{x}, \varepsilon) \;
+            (\text {с некоторым } {\varepsilon>0})$ функиия
+        $\dot{x} \mapsto L(t, x(t), \dot{x})$ выпукла.
+    \end{definition}
+
+    \begin{theorem}
+        Если выполнены усиленное
+        условие Якоби и усиленное условие Вейерштрасса, то экстремаль доставляет
+        сильный максимум.
+    \end{theorem}
+
+    Рассмотрим задачу $\int_0^\pi\left(\dot{x}^2-x^2-x^4\right) d t \rightarrow$ inf, $x(0)=x(\pi)=$ 0.
+    Показать, что для $\hat{x}=0$ выполнено yсиленное условие Лежандра, условие Якоби,
     при этом $\hat{x}=0$ не является точкой слабого минимума.
-    
+
     \textbf{Peшение.} Имеем $\hat{L}_{\dot{x} \dot{x}}(t)=2, \hat{L}_{\dot{x} x}=0, \hat{L}_{x x}=-2$. 3начит, выполнено усиленное условие Лежандра. Уравнение Якоби имеет вид $\ddot{h}+h=0$; его нетривиальное решение, зануляющееся при $t=0$, имеет вид $h(t)=a \sin t$, $a \neq 0$. Torда $h(t) \neq 0$ при $t \in(0, \pi)$, но $h(\pi)=0$. Значит, выполнено условие Якоби, но не усиленное.
     Boзьмем $x(t)=\varepsilon \sin t$. Toгдa
     $$
-    \begin{gathered}
-    \int_0^\pi\left(\dot{x}^2-x^2-x^4\right) d t=\varepsilon^2 \int_0^\pi\left(\cos ^2 t-\sin ^2 t\right) d t-\varepsilon^4 \int_0^\pi \sin ^4 t d t= \\
-    =\varepsilon^2 \int_0^\pi \cos 2 t d t-\varepsilon^4 \int_0^\pi \sin ^4 t d t=-\varepsilon^4 \int_0^\pi \sin ^4 t d t<0 .
-    \end{gathered}
+        \begin{gathered}
+            \int_0^\pi\left(\dot{x}^2-x^2-x^4\right) d t=\varepsilon^2 \int_0^\pi\left(\cos ^2 t-\sin ^2 t\right) d t-\varepsilon^4 \int_0^\pi \sin ^4 t d t= \\
+            =\varepsilon^2 \int_0^\pi \cos 2 t d t-\varepsilon^4 \int_0^\pi \sin ^4 t d t=-\varepsilon^4 \int_0^\pi \sin ^4 t d t<0 .
+        \end{gathered}
     $$
-    
+
     Так как $\varepsilon>0$ может быть сколь угодно мало, то слабого минимума нет.
 \end{task}
